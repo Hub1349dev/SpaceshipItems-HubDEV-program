@@ -26,4 +26,31 @@ for color in colors:
         f.write(json_template.replace("{color}", color))
 
 print(f"Creado {len(colors)} archivos en la carpeta '{output_dir}'")
+
+## SE GENERAN GRAFFITIS
+
+# el directorio de los archivos graffitis
+output_dir = "graffiti_jsons"
+os.makedirs(output_dir, exist_ok=True)
+
+# la estructura del json graffitis
+json_template = '''{
+"parent": "item/generated",
+"textures": {
+"layer0": "comicsafio:item/{color}_graffiti"
+  }
+}
+'''
+
+# se generan los archivos bien pros
+for color in colors:
+    filename = f"{color}_graffiti.json"
+    filepath = os.path.join(output_dir, filename)
+    with open(filepath, "w", encoding="utf-8") as f:
+        f.write(json_template.replace("{color}", color))
+
+
+
+
+print(f"Creado {len(colors)} archivos en la carpeta '{output_dir}'")
 print("Programa creado por HubDEV")
