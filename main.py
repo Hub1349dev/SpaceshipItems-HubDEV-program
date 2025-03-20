@@ -1,16 +1,16 @@
 import os
 
-# Lista de colores de Minecraft
+# la lista de colores
 colors = [
     "white", "orange", "magenta", "light_blue", "yellow", "lime", "pink",
     "gray", "light_gray", "cyan", "purple", "blue", "brown", "green", "red", "black"
 ]
 
-# Directorio de salida
+# el directorio de los archivos
 output_dir = "spaceship_jsons"
 os.makedirs(output_dir, exist_ok=True)
 
-# Plantilla JSON
+# la estructura del json
 json_template = '''{
 "parent": "item/generated",
 "textures": {
@@ -18,11 +18,12 @@ json_template = '''{
 }
 }'''
 
-# Generar archivos JSON para cada color
+# se generan los archivos bien pros
 for color in colors:
     filename = f"spaceship_{color}.json"
     filepath = os.path.join(output_dir, filename)
     with open(filepath, "w", encoding="utf-8") as f:
         f.write(json_template.replace("{color}", color))
 
-print(f"Generados {len(colors)} archivos en la carpeta '{output_dir}'.")
+print(f"Creado {len(colors)} archivos en la carpeta '{output_dir}'")
+print("Programa creado por HubDEV")
