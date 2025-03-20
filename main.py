@@ -33,4 +33,4 @@ for color in colors:
 
 print(f"Generados {len(colors)} archivos en la carpeta '{output_dir}'.")
 
-print("Programa hecho por HubDEV")
+print("Programa creado por HubDEV")
